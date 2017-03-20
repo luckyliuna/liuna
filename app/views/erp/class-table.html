@@ -1,0 +1,493 @@
+    <style>
+   dl >dd {font-size: 13px;line-height:30px;}
+    dl >dd span{ font-size: 13px;color:#333; margin-left:10px;}
+    input{width:70px;     
+    }
+    ul>li span{font-size: 13px;color:#333; }
+    a:hover{    cursor: pointer;}
+    tab >span{ margin:5px;}
+    label>span{font-size: 12px;color:#8e8e8e;}
+    .fenbu{margin:1px; line-height: 24px; padding:5px;line-height: 32px;background-color:#fafafa;;}
+    .selected{ background-color:#43bfe3;color: white; }
+    </style>
+<h3>批量新建班级
+    <small></small>
+</h3>
+<!-- START panel-->
+<div class="panel panel-default">
+    <div class="panel-heading"></div>
+    <div class="panel-body">
+        <form form-wizard="" steps="4" novalidate="" ng-submit="alertSubmit()">
+            <div class="form-wizard wizard-horizontal">
+                <!-- START wizard steps indicator-->
+                <ol class="row">
+                    <li ng-class="{'active':wizard.active(1)}" ng-click="wizard.go(1)" class="col-md-3">
+                        <h4>第一步：选择课程类型</h4>
+                    </li>
+                    <li ng-class="{'active':wizard.active(2)}" ng-click="wizard.go(2)" class="col-md-3">
+                        <h4>第二步：设置班级信息</h4>
+                    </li>
+
+                </ol>
+                <!-- END wizard steps indicator-->
+                <!-- START Wizard Step inputs -->
+                <div ng-show="wizard.active(1)">
+                    <fieldset>
+                        <legend></legend>
+                        <!-- START row -->
+                        <div class="row">
+                            <!-- START 编号 -->
+                            <div class="col-md-6" style="height:auto;background-color:#fafafa;float:left; padding-top:20px;padding-bottom:20px; ">
+                                <div class="form-group">
+                                <ul style="line-height:34px;list-style:none;"  >
+                                    <li  style="padding-left:30px;width:80%">编号：&nbsp;&nbsp;&nbsp;&nbsp;<input style="vertical-align:middle;width:30%;height:24px">
+                                    <button type="button" ng-click="" class="btn btn-xs  btn-default"><em class="fa fa-search"></em> </button></li>
+                                    <li  style="padding-left:30px;width:80%">部门： <span>事业单位事业部</span></li>
+                                    <li  style="padding-left:30px;width:80%">授课形式： <span>面授</span></li>
+                                    <li  style="padding-left:30px;width:80%">笔面试类型：<span> 面试</span></li>
+                                    <li  style="padding-left:30px;width:80%">类型： <span>非协议</span></li>
+                                    <li  style="padding-left:30px;width:80%">班别：<span> 面试精讲班</span></li>
+                                </ul>
+                               </div>
+                            </div>
+
+                            <div class="col-md-6" style="height:auto;background-color:#fafafa;float:left; padding-top:20px;padding-bottom:20px; ">
+                                <div class="form-group">
+                                <ul style="line-height:34px;list-style:none">
+                                   <li  style="padding-left:30px;width:80%">新学时：<span> 24</span></li>
+                                    <li  style="padding-left:30px;width:80%">学费：<span> 1，680.00</span></li>
+                                    <li  style="padding-left:30px;width:80%">杂费：<span>0.00</span></li>
+                                    <li  style="padding-left:30px;width:80%">最低开班人数：<span> 5</span></li>
+                                    <li  style="padding-left:30px;width:80%">限招人数：<span> 0</span></li>
+                                    <li  style="padding-left:30px;width:80%">是否职位保护：<span> 否</span></li>
+                                </ul>
+                               </div>
+                            </div>
+                          <!-- END 编号-->
+
+<!-- START 选项卡设置 -->
+     <!-- START 按照区域-->
+   <div class="col-lg-12">
+      <div  id="panelDemo14" class="panel panel-default">
+         <label class="panel-heading"><span style="border-left:#43bfe3 4px solid;"></span>&nbsp;&nbsp;按照地区或分部设置</label>
+         <div class="panel-body">
+            <tabset type="pills">
+             <legend></legend>
+               <tab heading="按照班级归属分部">
+                   <div   style="margin:20px 0 0 0;">
+                       <span class="fenbu selected"  >全部</span>
+                        <span class="fenbu  selected">长春总部</span>
+                        <span class="fenbu"  >珲春分部</span>
+                        <span class="fenbu">卫星广场分部</span>
+                        <span class="fenbu">公主岭分部</span>
+                        <span class="fenbu">磐石分部</span>
+                        <span class="fenbu">敦化分部</span>
+                        <span class="fenbu">榆树分部</span>
+                        <span class="fenbu">梅河口分部</span>
+                        <span class="fenbu">吉林白山分部</span>
+                        <span class="fenbu">吉林延吉分部</span>
+                        <span class="fenbu">吉林通化分部</span>
+                        <span class="fenbu">辽源分部</span>
+                        <span class="fenbu">松原分部</span>
+                        <span class="fenbu">净月学习中心</span>
+                        <span class="fenbu">吉四平分部</span>
+                        <span class="fenbu">白城分部</span>
+                        <span class="fenbu">吉林市分部</span>
+                  </div>             
+                </tab>
+               <tab heading="按照上课城市">
+                  <div   style="margin:20px 0 0 0;">
+                        <span class="fenbu selected">全部</span>
+                        <span class="fenbu selected">敦化</span>
+                        <span class="fenbu">图们市</span>
+                        <span class="fenbu">延边州</span>
+                        <span class="fenbu">延吉市</span>
+                  </div>    
+               </tab>
+              
+            </tabset>
+         </div>
+      </div>
+ </div>
+      <!-- END 按照区域-->
+
+      <!-- START 按照时间-->
+      <div class="col-lg-6">
+      <div  class="panel panel-default">
+         <label class="panel-heading"><span style="border-left:#43bfe3 4px solid;"></span>&nbsp;&nbsp;按照时间设置</label>
+         <div class="panel-body">
+             <fieldset>
+                  <legend></legend>
+                  <!-- START row -->
+                  <div class="row" >
+                     <div class="col-md-4">
+                        <div class="form-group">
+                           <div class="controls">
+                               开始时间：<input type="text" style="vertical-align: middle;height:24px" name="" value="">
+                              <button type="button" ng-click="" class="btn btn-xs  btn-default"><em class="fa fa-calendar"></em> </button>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-3">
+                        <div class="form-group">
+                           <div class="controls">
+                             时间跨度：<select style="height:24px">
+                                        <option selected="2">2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                   </select> 
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-3">
+                        <div class="form-group">
+                           <div class="controls">
+                             &nbsp;&nbsp;课程周期：
+                                        <select style="height:24px;vertical-align: middle;">
+                                        <option selected="2">0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                   </select>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- END row -->
+               </fieldset>
+              </div>
+         </div>
+      </div>
+      <!-- END 按照时间-->
+
+      <!-- START 添加记录数-->
+      <div class="col-lg-6">
+      <div  class="panel panel-default">
+         <label class="panel-heading"><span style="border-left:#43bfe3 4px solid;"></span>&nbsp;&nbsp;按照条数设置</label>
+         <div class="panel-body">
+             <fieldset>
+                  <legend></legend>
+                  <!-- START row -->
+                  <div class="row" >
+                      <div class="form-group">
+                           <div class="controls">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选择要添加记录数目：<select  style="height:24px;">
+                                <option selected="2">2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                           </select> 
+                        </div> 
+                     </div>
+                  </div>
+                  <!-- END row -->
+               </fieldset>
+              </div>
+         </div>
+      </div>
+      <!-- END 添加记录数目-->
+   </div>
+        </fieldset>
+                    <ul class="pager">
+                        <li class="next" ><a href="#" ng-click="wizard.go(2)">下一步 &rarr;</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END Wizard Step inputs -->
+
+                <!-- START 设置班级信息 -->
+         <div ng-show="wizard.active(2)">
+          <fieldset>
+              <legend></legend>
+                     <!-- START row -->
+               <div class="row">
+                  <div class="col-lg-10 pull-left">
+                   <div class="bootstrap-admin-panel-content" style=" background-color:#fafafa;" >
+                     <label style="margin-top:20px;margin-bottom:10px ;" class="col-md-6"><span style="border-left:#43bfe3 4px solid;"></span>&nbsp;&nbsp;一致属性</label>
+                    <table class="table table-striped table-bordered" style="font-size: 12px;" border="0" cellspacing="2" cellpadding="0">
+                        <thead>
+                            <tr style="text-align: center;background-color:#43bfe3;color:white; ">
+                                <th nowrap="" style="text-align: center;color:white; ">学费</th>
+                                <th nowrap="" style="text-align: center;color:white; ">杂费</th>
+                                <th nowrap=""  style="text-align: center;color:white; ">住宿是否可选</th>
+                                <th nowrap="" style="text-align: center;color:white; ">标题</th>
+                                <th nowrap="" style="text-align: center;color:white; ">网站显示科目</th>
+                                <th nowrap=""  style="text-align: center;color:white; ">职位保护</th>
+                                <th nowrap=""  style="text-align: center;color:white; "> 允许网报</th>
+                                <th nowrap="" style="text-align: center;color:white; ">实际操作人</th>
+                             </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="text-align: center; ">
+                                <td><input value="10000"></td>
+                                <td><input value="800"></td>
+                                <td>
+                                    <select>
+                                        <option selected="--无--">--无--</option>
+                                        <option>是</option>
+                                        <option>否</option>
+                                        <option>强制住宿</option>
+                                        <option>强制不住宿</option>
+                                   </select>
+                                </td>
+                                <td><input value="培优双考定制班（签约）"></td>
+                                <td><input value="行测+申论"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox"></td>
+                                <td><input style="width:60px" value=""></td>
+                               </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="bootstrap-admin-panel-content" style=" background-color:#fafafa;">
+                    <label style="margin-bottom:10px ;margin-top:20px;" class="col-md-6"><span style="border-left:#43bfe3 4px solid;"></span>&nbsp;&nbsp;定制属性</label>
+                    <table class="table table-striped table-bordered" style="font-size: 12px;">
+                        <thead>
+                            <tr style="text-align: center; background-color:#43bfe3;color:white; ">
+                                <th nowrap="" style="text-align: center;color:white; ">操作</th>
+                                <th nowrap=""  style="text-align: center;color:white; ">班号</th>
+                                <th nowrap=""  style="text-align: center;color:white; ">所属分公司</th>
+                                <th nowrap=""  style="text-align: center;color:white; ">归属分部</th>
+                                <th nowrap="" style="text-align: center;color:white; ">上课城市</th>
+                                <th nowrap="" style="text-align: center;color:white; ">教室</th>
+                                <th nowrap="" style="text-align: center;color:white; ">上课地点</th>
+                                <th nowrap=""  style="text-align: center;color:white; ">开课时间</th>
+                                <th nowrap=""  style="text-align: center;color:white; ">结课时间</th>
+                                <th nowrap=""  style="text-align: center;color:white; ">上课日期</th>
+                                <th nowrap=""  style="text-align: center;color:white; ">上课时间</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr style="text-align: center; ">
+                                <td><a>删除</a>&nbsp;<a>复制</a></td>
+                                <td><input  value="12345"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="JD601"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="2016-07-10"></td>
+                                <td><input value="2016-08-10"></td>
+                                <td><input value=""></td>
+                                <td><input value=""></td>
+                            </tr>
+
+                            <tr style="text-align: center; ">
+                                <td><a>删除</a>&nbsp;<a>复制</a></td>
+                                <td><input  value="12345"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="JD601"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="2016-07-10"></td>
+                                <td><input value="2016-08-10"></td>
+                                <td><input value=""></td>
+                                <td><input value=""></td>
+                            </tr>
+
+
+                            <tr style="text-align: center; ">
+                                <td><a>删除</a>&nbsp;<a>复制</a></td>
+                                <td><input  value="12345"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="JD601"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="2016-07-10"></td>
+                                <td><input value="2016-08-10"></td>
+                                <td><input value=""></td>
+                                <td><input value=""></td>
+                            </tr>
+
+
+                            <tr style="text-align: center; ">
+                                <td><a>删除</a>&nbsp;<a>复制</a></td>
+                                <td><input  value="12345"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="JD601"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="2016-07-10"></td>
+                                <td><input value="2016-08-10"></td>
+                                <td><input value=""></td>
+                                <td><input value=""></td>
+                            </tr>
+
+                            <tr style="text-align: center; ">
+                                <td><a>删除</a>&nbsp;<a>复制</a></td>
+                                <td><input  value="12345"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="JD601"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="2016-07-10"></td>
+                                <td><input value="2016-08-10"></td>
+                                <td><input value=""></td>
+                                <td><input value=""></td>
+                            </tr>
+
+                            <tr style="text-align: center; ">
+                                <td><a>删除</a>&nbsp;<a>复制</a></td>
+                                <td><input  value="12345"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="JD601"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="2016-07-10"></td>
+                                <td><input value="2016-08-10"></td>
+                                <td><input value=""></td>
+                                <td><input value=""></td>
+                            </tr>
+
+                            <tr style="text-align: center; ">
+                                <td><a>删除</a>&nbsp;<a>复制</a></td>
+                                <td><input  value="12345"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="JD601"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="2016-07-10"></td>
+                                <td><input value="2016-08-10"></td>
+                                <td><input value=""></td>
+                                <td><input value=""></td>
+                            </tr>
+
+                           <tr style="text-align: center; ">
+                                <td><a>删除</a>&nbsp;<a>复制</a></td>
+                                <td><input  value="12345"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="JD601"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="2016-07-10"></td>
+                                <td><input value="2016-08-10"></td>
+                                <td><input value=""></td>
+                                <td><input value=""></td>
+                            </tr>
+
+                            <tr style="text-align: center; ">
+                                <td><a>删除</a>&nbsp;<a>复制</a></td>
+                                <td><input  value="12345"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="JD601"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="2016-07-10"></td>
+                                <td><input value="2016-08-10"></td>
+                                <td><input value=""></td>
+                                <td><input value=""></td>
+                            </tr>
+
+                            <tr style="text-align: center; ">
+                                <td><a>删除</a>&nbsp;<a>复制</a></td>
+                                <td><input  value="12345"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山分部"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="JD601"></td>
+                                <td><input value="马鞍山市"></td>
+                                <td><input value="2016-07-10"></td>
+                                <td><input value="2016-08-10"></td>
+                                <td><input value=""></td>
+                                <td><input value=""></td>
+                            </tr>
+
+                            <tr style="text-align: center; background-color:#ebebeb">
+                                <td><a>增加</a></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+           
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!--start 课程属性 -->
+           <div class="pull-right col-lg-2" style="height:auto;background-color:#fafafa; padding:10px 0 30px 20px;">
+                <dl>
+                    <label style="margin-top:10px"><span style="border-left:#43bfe3 4px solid;"></span>&nbsp;&nbsp;课程属性</label>
+                    <legend></legend>
+                    <dd>编号： &nbsp;&nbsp;<span>KCLX075044</span></dd>
+                     <dd>部门： <span>事业单位事业部</span></dd>
+                     <dd>授课形式： <span>面授</span></dd>
+                     <dd>笔面试类型：<span> 面试</span></dd>
+                     <dd>类型： <span>非协议</span></dd>
+                     <dd>班别：<span> 面试精讲班</span></dd>
+                     <dd>新学时：<span> 24</span></dd>
+                     <dd>学费：<span> 1，680.00</span></dd>
+                     <dd>杂费：<span>0.00</span></dd>
+                     <dd>最低开班人数：<span> 5</span></dd>
+                     <dd>限招人数：<span> 0</span></dd>
+                     <dd>是否职位保护：<span> 否</span></dd>
+                </dl>
+
+                <dl>
+                    <label style="margin-top:10px"><span style="border-left:#43bfe3 4px solid;"></span>&nbsp;&nbsp;班级情况汇总</label>
+                    <legend></legend>
+                    <dd>本次创建班级个数： &nbsp;&nbsp;<strong>10</strong></dd>
+               
+                </dl>
+                <div class="form-group">
+                    <div class="col-md-offset-4"  >
+                        <button name="" class="btn btn-primary btn-sm" type="submit" value=""  >保存&nbsp;&nbsp;</button>
+                   </div>
+                </div>
+            </div>
+            <!--end 课程属性 -->
+        </div>
+     <!-- END row -->
+   </fieldset>
+           <ul class="pager">
+                  <li class="previous">
+                       <a href="#" ng-click="wizard.go(1)">
+                           &larr; 返回
+                       </a>
+                  </li>
+                  <!--<li class="next"><a href="#" ng-click="wizard.go(3)">Next <span>&rarr;</span></a> </li>-->
+          </ul>
+    </div>
+                <!-- END 设置班级信息  -->
+      </div>
+   </form>
+ </div>
+</div>
+<!-- END panel -->
