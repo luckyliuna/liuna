@@ -17,7 +17,7 @@
             } else {
                 json[src.charAt(i)]++
             }
-            console.log(json)
+            // console.log(json)
         }
         var mymax = 0;
         var myindex = '';
@@ -28,4 +28,23 @@
             }
         }
         document.getElementById("p1").innerHTML = "结果是：" + myindex + "：出现了" + mymax + "次"
+    }
+
+    function rep() {
+        function repeat(str, num) {
+            var str = 'abc';
+            var num = '6'
+            var result = '';
+
+            for (; num > 0;) {
+                result += str;
+                num--;
+
+            }
+            return result
+                //console.log(str)
+
+        }
+        repeat();
+        document.getElementById("p2").innerHTML = repeat();
     }
