@@ -63,7 +63,7 @@
             <div id="myScrollspy" class="col-xs-3">
                 <ul id="myNav" class="nav nav-tabs nav-stacked">
                     <li><a href="#section-1">练习2017-3-23</a></li>
-                    <li><a href="#section-2">&#x7B2C;&#x4E8C;&#x90E8;&#x5206;</a></li>
+                    <li><a href="#section-2">练习2017-3-29</a></li>
                     <li><a href="#section-3">&#x7B2C;&#x4E09;&#x90E8;&#x5206;</a></li>
                     <li><a href="#section-4">&#x7B2C;&#x56DB;&#x90E8;&#x5206;</a></li>
                     <li><a href="#section-5">&#x7B2C;&#x4E94;&#x90E8;&#x5206;</a></li>
@@ -97,7 +97,7 @@
                     </pre></span>
 
                 <span class="input-group-btn" onclick="suc()">
-                    <button type="button" class="btn btn-default">结果!</button>
+                    <button type="button" class="btn btn-default">运行结果！</button>
                 </span>
                 <br>
                 <span id="p1"></span>
@@ -110,7 +110,7 @@
             var result = '';
 
             for (; num > 0;) {
-                result += str;
+                result += str+',';
                 num--;
 
             }
@@ -123,20 +123,106 @@
                 </pre></span>
 
                 <span class="input-group-btn" onclick="rep()">
-                    <button type="button" class="btn btn-default">结果!</button>
+                    <button type="button" class="btn btn-default">运行结果！</button>
                 </span>
                 <br>
                 <span id="p2"></span>
                 <hr>
-                <h2 id="section-2">2017</h2>
-                <p>Integer pulvinar leo id risus pellentesque vestibulum. Sed diam libero, sodales eget sapien vel, porttitor bibendum enim. Donec sed nibh vitae lorem porttitor blandit in nec ante. Pellentesque vitae metus ipsum. Phasellus sed nunc ac sem
-                    malesuada condimentum. Etiam in aliquam lectus. Nam vel sapien diam. Donec pharetra id arcu eget blandit. Proin imperdiet mattis augue in porttitor. Quisque tempus enim id lobortis feugiat. Suspendisse tincidunt risus quis dolor fringilla
-                    blandit. Ut sed sapien at purus lacinia porttitor. Nullam iaculis, felis a pretium ornare, dolor nisl semper tortor, vel sagittis lacus est consequat eros. Sed id pretium nisl. Curabitur dolor nisl, laoreet vitae aliquam id, tincidunt
-                    sit amet mauris.</p>
-                <p>Integer pulvinar leo id risus pellentesque vestibulum. Sed diam libero, sodales eget sapien vel, porttitor bibendum enim. Donec sed nibh vitae lorem porttitor blandit in nec ante. Pellentesque vitae metus ipsum. Phasellus sed nunc ac sem
-                    malesuada condimentum. Etiam in aliquam lectus. Nam vel sapien diam. Donec pharetra id arcu eget blandit. Proin imperdiet mattis augue in porttitor. Quisque tempus enim id lobortis feugiat. Suspendisse tincidunt risus quis dolor fringilla
-                    blandit. Ut sed sapien at purus lacinia porttitor. Nullam iaculis, felis a pretium ornare, dolor nisl semper tortor, vel sagittis lacus est consequat eros. Sed id pretium nisl. Curabitur dolor nisl, laoreet vitae aliquam id, tincidunt
-                    sit amet mauris.</p>
+                <h2 id="section-2">练习2017-3-29</h2>
+                <p>题目3：写一个字符串转成驼峰的方法？</p>
+                <span><pre> <b>1.使用正则的方法</b>
+         var str = 'border-bootom-color'; 
+        //1.定义字符串
+        //2.创建 一个方法，
+        //3.定义正则，来匹配需要的字符；
+        //4.使用js自带的替换方法replace（），
+        //5.自带的替换方法里的数值为，1.定义的正则（配额的字符）2.创建一个方法使正则里的第一个子项修改为大写。
+        //6.使用alert方法弹出结果；
+
+        function test(str) {
+
+            var re = /-(\w)/g;
+            return str.replace(re, function($0, $1) {
+                return $1.toUpperCase();
+            })
+        }
+        alert(test(str)) //结果：borderBottomColor
+    <b>2.传统字符串方法</b>
+        var str = 'border-bootom-color'
+        // 1. 定义字符串，
+        // 2. 创建一个方法，
+        // 3. 定义一个变量表明字符串是以‘ - ’号分割的，
+        // 4. 使用for循环遍历字符串， 循环条件 i = 1（ 第二个字符开始） 且小于总长度， 且 i++，
+        // 5. 根据循环结果找出字符中第一个字母并改为大写 + 字符中的截取出第一位之后剩下的字母， 并且赋值给变量
+        // 6. 拼接变量中的字符串， 根绝自带方法join（ ''）使用空拼接。
+
+        function test(str) {
+            var arr = str.split('-');
+            for (var i = 1; i < arr.length; i++) {
+                arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1);
+
+            }
+            return arr.join('')
+
+        }
+        alert(test(str))
+                </pre></span>
+                <span class="input-group-btn" onclick="re()">
+                    <button type="button" class="btn btn-default">运行结果！</button>
+                </span>
+                <br>
+                <span id="p3"></span>
+                <hr>
+                <p>题目4：a b 两个变量 不实用第三个变量 来切换两个变量值</p>
+                <span><pre>
+    <b>方法：</b>
+    var a = 5;
+    // 定义 a = 5
+    var b = 6;
+    // 定义 b = 6
+    a = a + b;
+    //a=5+6 (a=11)
+    b = a - b;
+    //b = 11-6 (b=5)
+    a = a - b;
+    //a = 11-5 (a = 6)
+
+    <hr>
+    var a = 'ho';
+    var b = 'holle';
+    a = [a, b];
+    b = a[0];
+    a = a[1];
+
+                </pre></span>
+                <hr>
+                <p>题目5：有一个参数 n=5，不实用for循环，怎么返回[1,2,3,4,5]这样一个数组</p>
+                <span><pre>
+var n = 5;
+
+function show(n) {
+    var arr = [];
+    return (function() {
+        arr.unshift(n);
+        n--;
+        // console.log(n)
+        if (n != 0) {
+            arguments.callee();
+        }
+
+        return arr
+
+    })();
+
+}
+
+show(n)
+                </pre></span>
+                <span class="input-group-btn" onclick="Show()">
+                    <button type="button" class="btn btn-default">运行结果！</button>
+                </span>
+                <br>
+                <span id="p5"></span>
                 <hr>
                 <h2 id="section-3">2017</h2>
                 <p>Integer pulvinar leo id risus pellentesque vestibulum. Sed diam libero, sodales eget sapien vel, porttitor bibendum enim. Donec sed nibh vitae lorem porttitor blandit in nec ante. Pellentesque vitae metus ipsum. Phasellus sed nunc ac sem
